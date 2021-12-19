@@ -3,6 +3,7 @@ package saurav_practice_zomato;
 import org.openqa.selenium.By;
 
 public class zomato_elements {
+	//login page
 	public static By skip = By.id("com.application.zomato:id/skip_button");
 	public static By gps_permission_while_using = By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
 	public static By gps_permission_allow_this_time = By.id("com.android.permissioncontroller:id/permission_allow_one_time_button");
