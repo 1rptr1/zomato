@@ -16,4 +16,14 @@ public class zomato_elements {
 	public static By login_google = By.id("/android.widget.FrameLayout[3]/android.widget.FrameLayout");
 	public static By title = By.id("com.application.zomato:id/titleTv");
 	
+	//HOME PAGE
+	public static By search =By.id("com.application.zomato:id/edittext");
+	public static By area =By.id("com.application.zomato:id/location_title");
+	public static By city =By.id("com.application.zomato:id/location_subtitle");
+	public static By button =By.id("com.application.zomato:id/icon_font");
+	public static By title_tv =By.id("com.application.zomato:id/titleTv");
+	public static By delivery =By.id("//android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView");
+	public static By history =By.id("/android.widget.FrameLayout[5]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView");
+	
+	
 }

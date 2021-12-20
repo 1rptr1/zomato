@@ -56,7 +56,15 @@ public class zomato {
 			SetUp.explicit_Wait_visibility(driver, zomato_elements.skip);
 			driver.findElement(zomato_elements.skip).click();
 			
-
+///android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView
+			/*
+			 * for(int i=1;i<6;i++) {
+			 * System.out.println(driver.findElementByXPath("//android.widget.FrameLayout["+
+			 * i+
+			 * "]/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout[2]/android.widget.TextView"
+			 * ).getText()); }
+			 */		
+			driver.findElement(zomato_elements.history).click();
 			SetUp.explicit_Wait_visibility(driver, zomato_elements.title);
 
 		} catch (Exception e) {
