@@ -40,17 +40,18 @@ public class SetUp {
 
 		capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("avd","Pixel_XL_API_30"); 
+		capabilities.setCapability("avd","Pixel_XL_API_33"); 
 		capabilities.setCapability("platformName","android");
 		//capabilities.setCapability("automationName","espresso");
-		capabilities.setCapability("platformVersion", "11");
+		capabilities.setCapability("platformVersion", "13");
 		capabilities.setCapability("fullReset",true);
 		capabilities.setCapability("autoGrantPermissions", "true");
 
 	}
 	public void adb_executor_emulator(String devicename ) throws InterruptedException
 	{
-		ProcessBuilder pb_d = new ProcessBuilder("C:\\Android\\emulator\\emulator","-avd",devicename,"-no-snapshot");
+		//ProcessBuilder pb_d = new ProcessBuilder("C:\\Android\\emulator\\emulator","-avd",devicename,"-no-snapshot");
+		ProcessBuilder pb_d = new ProcessBuilder("C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\emulator","emulator -avd",devicename,"-no-snapshot");
 		try {
 			Process process = pb_d.start();
 			process.waitFor(60, TimeUnit.SECONDS);
@@ -61,7 +62,8 @@ public class SetUp {
 	}
 	public void adb_kill_Emulator() throws InterruptedException, IOException
 	{
-		String[] aCommand = new String[] { "C:\\Android\\platform-tools\\adb", "emu", "kill" };
+		//String[] aCommand = new String[] { "C:\\Android\\platform-tools\\adb", "emu", "kill" };
+		String[] aCommand = new String[] { "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb", "emu", "kill" };
 		Process  process = new ProcessBuilder(aCommand).start();
 		process.waitFor(1, TimeUnit.SECONDS);
 
@@ -69,7 +71,8 @@ public class SetUp {
 	
 	public void adb_kill_app(String packagename) throws InterruptedException, IOException
 	{
-		String[] aCommand = new String[] { "C:\\Android\\platform-tools\\adb", "uninstall", "packagename" };
+		//String[] aCommand = new String[] { "C:\\Android\\platform-tools\\adb", "uninstall", "packagename" };
+		String[] aCommand = new String[] { "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb", "uninstall", "packagename" };
 		Process  process = new ProcessBuilder(aCommand).start();
 		process.waitFor(1, TimeUnit.SECONDS);
 

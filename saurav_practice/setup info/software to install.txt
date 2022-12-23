@@ -1,0 +1,20 @@
+JDK latest version
+Node.js --> appium -->appium doctor
+
+node cmd
+----------
+node --version
+npm -v
+
+Appium install command
+-----------------------
+npm install -g appium 
+
+
+Appium Doctor --> to check if all installations are correct
+--------------------------------------------------------------
+npm install -g appium-doctor
+appium-doctor --android
+
+
+after all checks it showld work fine

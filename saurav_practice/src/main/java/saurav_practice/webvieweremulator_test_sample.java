@@ -37,7 +37,7 @@ public class webvieweremulator_test_sample {
 	public void setUp() throws MalformedURLException, InterruptedException {
 
 
-		ProcessBuilder pb_d = new ProcessBuilder("C:\\Android\\emulator\\emulator","-avd","Pixel_XL_API_30","-no-snapshot");
+		ProcessBuilder pb_d = new ProcessBuilder("C:\\Android\\emulator\\emulator","-avd","Pixel_XL_API_33","-no-snapshot");
 		try {
 			System.out.println("Starting Device");
 			Process process = pb_d.start();
@@ -57,7 +57,7 @@ public class webvieweremulator_test_sample {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("avd","Pixel_XL_API_30");
+		capabilities.setCapability("avd","Pixel_XL_API_33");
 		//capabilities.setCapability("browserName", "MozillaFirefox"); 
 		capabilities.setCapability("platformName","android");
 		capabilities.setCapability("platformVersion", "11");

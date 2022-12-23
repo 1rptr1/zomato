@@ -27,7 +27,7 @@ public class calculator
 		try 
 		{
 			android_Setup =new SetUp();
-			android_Setup.adb_executor_emulator("Pixel_XL_API_30");
+			android_Setup.adb_executor_emulator("Pixel_XL_API_33");
 			android_Setup.capabilities.setCapability("appPackage", "com.google.android.calculator");
 			android_Setup.capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
 			android_Setup.capabilities.setCapability("app", "D:\\appium_Automation\\calculator.apk");

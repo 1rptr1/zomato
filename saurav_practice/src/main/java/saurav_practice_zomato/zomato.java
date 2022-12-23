@@ -20,7 +20,8 @@ public class zomato {
 
 		try {
 			android_Setup = new SetUp();
-			android_Setup.adb_executor_emulator("Pixel_XL_API_30");
+			//android_Setup.adb_executor_emulator("Pixel_XL_API_30");
+			android_Setup.adb_executor_emulator("Pixel_XL_API_33");
 			android_Setup.capabilities.setCapability("app", "D:\\appium_Automation\\zomato.apk");
 			service = AppiumDriverLocalService.buildService(android_Setup.builder);
 
