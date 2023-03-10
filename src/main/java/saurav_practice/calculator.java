@@ -44,10 +44,12 @@ public class calculator
 	public void setUp() throws MalformedURLException, InterruptedException 
 	{
 			service.stop();
-			Thread.sleep(50);
+			Thread.sleep(1000);
 			service.start();
+			Thread.sleep(1000);
 			URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
 			driver = new AndroidDriver(remoteUrl, android_Setup.capabilities);
+			Thread.sleep(1000);
 	}
 	
 	@DataProvider
