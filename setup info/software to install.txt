@@ -17,4 +17,7 @@ npm install -g appium-doctor
 appium-doctor --android
 
 
-after all checks it showld work fine
+after all checks it should work fine
+
+env variables
+ANDROID_HOME  :: C:\Users\saura\AppData\Local\Android\Sdk
