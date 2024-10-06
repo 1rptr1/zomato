@@ -14,7 +14,7 @@ public class zomato {
 
 	SetUp android_Setup;
 	AppiumDriverLocalService service;
-	static AppiumDriver<MobileElement> driver;
+	static AppiumDriver driver;
 
 	public zomato() throws IOException {
 
@@ -50,7 +50,7 @@ public class zomato {
 			
 			//driver.findElement(zomato_elements.gps_permission_allow_this_time).click();;
 
-			driver.setLocation(new Location(19.290778, 84.787631, 40));
+		//	driver.setLocation(new Location(19.290778, 84.787631, 40));
 			driver.findElement(zomato_elements.mobile_number).click();
 			System.out.println(((HasOnScreenKeyboard) driver).isKeyboardShown());
 			driver.findElement(zomato_elements.mobile_number).sendKeys("7381670585");

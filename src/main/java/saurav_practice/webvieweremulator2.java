@@ -18,7 +18,7 @@ public class webvieweremulator2
 	
 	SetUp android_Setup;
 	AppiumDriverLocalService service;
-	static AppiumDriver<MobileElement> driver;
+	static AppiumDriver driver;
 	
 	
 	public webvieweremulator2() 
@@ -53,11 +53,11 @@ public class webvieweremulator2
 	@Test
 	public void sampleTest() throws InterruptedException {
 		driver.get("https://www.google.com");
-		Set<String> contextNames = driver.getContextHandles();
+		/*Set<String> contextNames = driver.getContextHandles();
 		for (String contextName : contextNames) {
 		    System.out.println(contextName); //prints out something like NATIVE_APP \n WEBVIEW_1
 		}
-		driver.context((String) contextNames.toArray()[1]);
+		driver.context((String) contextNames.toArray()[1]);*/
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	

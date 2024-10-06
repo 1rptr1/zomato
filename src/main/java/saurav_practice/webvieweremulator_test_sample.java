@@ -1,6 +1,5 @@
 package saurav_practice;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -31,7 +30,7 @@ import org.testng.annotations.*;
 
 public class webvieweremulator_test_sample {
 
-	static AppiumDriver<MobileElement> driver;
+	static AppiumDriver driver;
 	AppiumDriverLocalService service;
 	@BeforeClass
 	public void setUp() throws MalformedURLException, InterruptedException {
@@ -92,11 +91,11 @@ public class webvieweremulator_test_sample {
 	@Test
 	public void sampleTest() throws InterruptedException {
 		driver.get("https://www.google.com");
-		Set<String> contextNames = driver.getContextHandles();
+	/*	Set<String> contextNames = driver.getContextHandles();
 		for (String contextName : contextNames) {
 		    System.out.println(contextName); //prints out something like NATIVE_APP \n WEBVIEW_1
 		}
-		driver.context((String) contextNames.toArray()[1]);
+		driver.context((String) contextNames.toArray()[1]);*/
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	
@@ -131,11 +130,11 @@ public class webvieweremulator_test_sample {
 	}
 	public static void swipe(int fromX,int fromY,int toX,int toY) {
 		 
-		 TouchAction action = new TouchAction(driver);
+		 /*TouchAction action = new TouchAction(driver);
 		 action.press(PointOption.point(fromX,fromY))
 		 .waitAction(new WaitOptions().withDuration(Duration.ofMillis(3000))) //you can change wait durations as per your requirement
 		 .moveTo(PointOption.point(toX, toY))
 		 .release()
 		 .perform();
-		 }
-}
+		 }*/
+}}

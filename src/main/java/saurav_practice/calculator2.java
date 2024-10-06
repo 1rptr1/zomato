@@ -3,6 +3,7 @@ package saurav_practice;
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import org.openqa.selenium.By;
 import saurav_practice_base.SetUp;
 import saurav_practice_base.testUtil;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class calculator2
 	
 	SetUp android_Setup;
 	AppiumDriverLocalService service;
-	static AppiumDriver<MobileElement> driver;
+	static AppiumDriver driver;
 	
 	
 	public calculator2() 
@@ -65,27 +66,27 @@ public class calculator2
 		calculator_number_press(val1);
 		data =Integer.valueOf(val1);
 		if(ope.equalsIgnoreCase("+"))
-			{driver.findElementById("com.google.android.calculator:id/op_add").click();
+			{driver.findElement(By.id("com.google.android.calculator:id/op_add")).click();
 				data += Integer.valueOf(val2);
 			}
 		if(ope.equalsIgnoreCase("-"))
-		{driver.findElementById("com.google.android.calculator:id/op_sub").click();
+		{driver.findElement(By.id("com.google.android.calculator:id/op_sub")).click();
 			data += Integer.valueOf(val2);
 		}
 		if(ope.equalsIgnoreCase("/"))
-		{driver.findElementById("com.google.android.calculator:id/op_div").click();
+		{driver.findElement(By.id("com.google.android.calculator:id/op_div")).click();
 			data += Integer.valueOf(val2);
 		}
 		if(ope.equalsIgnoreCase("%"))
-		{driver.findElementById("com.google.android.calculator:id/op_mod").click();
+		{driver.findElement(By.id("com.google.android.calculator:id/op_mod")).click();
 			data += Integer.valueOf(val2);
 		}
 		calculator_number_press(val2);
 		//driver.findElementById("com.google.android.calculator:id/clr").click();
 		
-		String expected = driver.findElementById("com.google.android.calculator:id/result_preview").getText();
+		String expected = driver.findElement(By.id("com.google.android.calculator:id/result_preview")).getText();
 		System.out.println("expected = "+expected);
-		driver.findElementById("com.google.android.calculator:id/clr").click();
+		driver.findElement(By.id("com.google.android.calculator:id/clr")).click();
 		
 		Assert.assertEquals(Integer.valueOf(res),Integer.valueOf(expected));
 	}
@@ -94,7 +95,7 @@ public class calculator2
 	{
 		for(int i=0;i<number.length();i++)
 		{
-			driver.findElementById("com.google.android.calculator:id/digit_"+number.charAt(i)).click();
+			driver.findElement(By.id("com.google.android.calculator:id/digit_"+number.charAt(i))).click();
 		}
 	}
 

@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -33,25 +32,26 @@ public class SetUp {
 		builder = new AppiumServiceBuilder();
 
 		builder.withIPAddress("127.0.0.1");
-		builder.usingPort(4723);
+		builder.usingPort(4701);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
 		builder.withArgument(GeneralServerFlag.RELAXED_SECURITY);
 
 		capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability("avd","Pixel_2_API_33"); 
+		/*capabilities.setCapability("avd","Pixel 9 API 35");
 		capabilities.setCapability("platformName","android");
 		//capabilities.setCapability("automationName","espresso");
-		capabilities.setCapability("platformVersion", "13");
+		capabilities.setCapability("platformVersion", "15");
 		capabilities.setCapability("fullReset",true);
-		capabilities.setCapability("autoGrantPermissions", "true");
+		capabilities.setCapability("autoGrantPermissions", "true");*/
 
 	}
 	public void adb_executor_emulator(String devicename ) throws InterruptedException
 	{
 		//ProcessBuilder pb_d = new ProcessBuilder("C:\\Android\\emulator\\emulator","-avd",devicename,"-no-snapshot");
-		ProcessBuilder pb_d = new ProcessBuilder("C:\\Users\\RptR\\AppData\\Local\\Android\\Sdk\\emulator","emulator -avd",devicename,"-no-snapshot");
+
+		ProcessBuilder pb_d = new ProcessBuilder("C:\\Users\\saura\\Desktop\\emulator\\emulator.exe","emulator -avd",devicename,"-no-snapshot");
 		try {
 			Process process = pb_d.start();
 			process.waitFor(60, TimeUnit.SECONDS);
@@ -89,15 +89,15 @@ public class SetUp {
 		 }
 	
 	
-	public static void explicit_Wait_visibility(AppiumDriver<MobileElement> driver,By element)
+	public static void explicit_Wait_visibility(AppiumDriver driver,By element)
 	{
-		WebDriverWait wait = new WebDriverWait(driver,50);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 	
-	public static void explicit_Wait_elementnotfound(AppiumDriver<MobileElement> driver,By element)
+	public static void explicit_Wait_elementnotfound(AppiumDriver driver,By element)
 	{
-		WebDriverWait wait = new WebDriverWait(driver,50);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	public static void takeScreenshot(WebDriver driver, String screenShotName) {
@@ -111,12 +111,6 @@ public class SetUp {
 	    }
 	}
 	
-	public static void context(AppiumDriver<MobileElement> driver)
-	{
-		Set<String> contextNames = driver.getContextHandles();
-		for (String contextName : contextNames) {
-			System.out.println(contextName); // prints out something like NATIVE_APP \n WEBVIEW_1
-		}
-	}
+
 
 }

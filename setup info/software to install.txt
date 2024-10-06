@@ -1,3 +1,5 @@
+unhide folder AppData
+
 JDK latest version
 Node.js --> appium -->appium doctor
 
